@@ -8,10 +8,10 @@ export function auth(email, password, isLogin) {
       returnSecureToken: true
     }
 
-    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBbRTeFFn9Xk9XP2YtLl8WwnO27aDIrSqc'
+    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${key}'
 
     if (isLogin) {
-      url ='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBbRTeFFn9Xk9XP2YtLl8WwnO27aDIrSqc'
+      url ='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${key}'
     }
     const response = await axios.post(url, authData)
     const data = response.data
